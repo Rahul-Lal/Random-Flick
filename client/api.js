@@ -1,4 +1,5 @@
 import request from 'superagent'
+let color = 'colors'
 
 /*
     Original link with fixed filmID number '707': 'A View To A Kill':
@@ -13,11 +14,11 @@ export function getFilm() {
         .then(res => {
             const title = res.body.title
             const overview = res.body.overview
-            const poster_path = res.body.poster_path
+            const poster_path = poster_source + res.body.poster_path
 
             console.log('Title: ' + title)
             console.log('Overview: ' + overview)
-            console.log('Poster: ' + poster_source + poster_path)
+            console.log('Poster: ' + poster_path)
             return title, overview, poster_path
         })
         .catch(err => {
