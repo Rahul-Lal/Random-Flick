@@ -48,6 +48,7 @@ class App extends React.Component {
       return (
         <React.Fragment>
           <h1>I want to watch...</h1>
+          <h2>'CTRL + SHIFT + I' before pressing choose</h2>
 
           <button onClick={this.handleClick}>Choose</button>
 
