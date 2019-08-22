@@ -6,18 +6,18 @@ import request from 'superagent'
 */
 const filmID = Math.floor(Math.random() * 999) + 1
 const tmdbAPI = `http://api.themoviedb.org/3/movie/${filmID}s?api_key=96628c0e6c6bba7100b21737333c56cf`
-const poster_source = 'https://image.tmdb.org/t/p/original'
+const poster_source = 'https://image.tmdb.org/t/p/original/'
 
 export function getFilm() {
     request.get(tmdbAPI)
         .then(res => {
             const title = res.body.title
             const overview = res.body.overview
-            const poster_path = res.body.poster_path
+            const poster_path = poster_source + res.body.poster_path
 
             console.log('Title: ' + title)
             console.log('Overview: ' + overview)
-            console.log('Poster: ' + poster_source + poster_path)
+            console.image(poster_path)
             return title, overview, poster_path
         })
         .catch(err => {
