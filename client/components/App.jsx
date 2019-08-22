@@ -8,7 +8,6 @@ class App extends React.Component {
     poster_path: ''
   }
 
-
   // componentDidMount() {
   //   try {
   //     getFilm()
